@@ -57,7 +57,15 @@
                 let audios = Array.from(document.getElementsByTagName('audio'));
                 audios.forEach( (audio) => {
                     if (audio.dataset.key == e.keyCode) {
+                        let keys = Array.from(document.getElementsByClassName('key'));
+                        keys.forEach( (key) => {
+                            if (key.dataset.key == e.keyCode) {
+                                setTimeout(() => key.classList.remove('playing'), 100);
+                                key.classList.add('playing');
+                            }
+                        })
                         audio.play();
+                        
                     }
                 });
             });
