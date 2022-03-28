@@ -18,12 +18,13 @@ body {
     border-radius: 5px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: all ease 0.3s;
+    transition: all ease 0.07s;
 }
 
 .playing {
     border-color: yellow;
     transform: scale(1.1);
+    box-shadow: 0 0 10px yellow;
 }
 
 p {
