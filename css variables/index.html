@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>css variables</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Update CSS Variables with <span class="colored">JS</span></h1>
+        <div class="controls">
+            <label for="spacing">Spacing: </label>
+            <input type="range" name="spacing" min="0" max="250" value="10" data-sizing="px">
+            <label for="blur">Blur: </label>
+            <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+            <label for="base">Base color: </label>
+            <input type="color" name="base" value="#ffff00">
+        </div>
+        <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/how-to/compositing/jcr%3Acontent/main-pars/image/compositing_1408x792.jpg" />
+        <script>
+            const inputs = document.querySelectorAll('.controls input');
+            
+            function handleUpdate() {
+                const suffix = this.dataset.sizing || '';
+                document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+            }
+
+            inputs.forEach(input => input.addEventListener('input', handleUpdate));
+        </script>
+    </body>
+</html>

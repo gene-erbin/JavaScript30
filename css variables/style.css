@@ -1,0 +1,32 @@
+:root {
+    --base: #ffff00;
+    --spacing: 10px;
+    --blur: 10px;
+}
+
+html {
+    font-size: 2em;
+    color: #4a0303;
+    font-weight: bold;
+    text-shadow: 2px 0px 3px white;
+}
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.colored {
+    color: var(--base);
+}
+
+img {
+    padding: var(--spacing);
+    max-width: 600px;
+    background-color: var(--base);
+    filter: blur(var(--blur));
+}
